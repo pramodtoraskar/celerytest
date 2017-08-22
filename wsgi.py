@@ -9,7 +9,7 @@ BACKEND_PROTOCOL = 'rpc://'
 CELERY_APP = Celery('celery_task', broker=BROKER_URL, backend=BACKEND_PROTOCOL)
 
 @application.route("/celerytest")
-def hello():
+def celerytest():
     res = CELERY_APP.send_task('dwm_task.dwm_post_process', ('Test_Batch_ID'))
     return "Task Submitted Successfully!"
 
