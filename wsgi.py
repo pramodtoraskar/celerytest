@@ -6,7 +6,7 @@ application = Flask(__name__)
 BROKER_URL = 'amqp://guest:guest@rabbitmq:5672'
 BACKEND_PROTOCOL = 'rpc://'
 
-CELERY_APP = Celery('celery_task', broker=BROKER_URL, backend=BACKEND_PROTOCOL)
+CELERY_APP = Celery('dwm_task', broker=BROKER_URL, backend=BACKEND_PROTOCOL)
 
 @application.route("/celerytest")
 def celerytest():
