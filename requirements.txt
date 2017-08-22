@@ -1,2 +1,3 @@
 gunicorn
 Flask
+celery==4.1.0
